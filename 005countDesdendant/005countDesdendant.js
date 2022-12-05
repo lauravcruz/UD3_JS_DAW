@@ -16,10 +16,11 @@ let formSearch = document.querySelector("form[name = 'search'");
 
 // El primer input en ese formulario.
 let primerInput = formSearch.querySelector("input"); //Buscamos dentro del elemento que hemos creado
-primerInput.style.backgroundColor = "blue";
+primerInput.style.backgroundColor = "blue"; 
 
 // El último input en ese formulario.
 let ultimoInput = document.querySelector("form > input:last-child"); //tenemos que añadir > para indicar que es hijo directo (sino coge el anterior)
-ultimoInput.style.backgroundColor = "red";
+ultimoInput.style.backgroundColor = "red"; 
 
 // Abra la página index.html en una ventana separada y haga uso de las herramientas del navegador.
+

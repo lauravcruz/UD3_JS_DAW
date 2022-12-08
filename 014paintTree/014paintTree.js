@@ -67,7 +67,7 @@ function extraerData2(data) {
     let li = document.createElement("li");
     li.innerText = item;
 
-    //Con recursividad recorrermos los objetos que contiene cada objeto
+    //Con recursividad recorreremos los objetos que contiene cada objeto
     let child = extraerData2(data[item]);
     if (child != null) {
       li.append(child);

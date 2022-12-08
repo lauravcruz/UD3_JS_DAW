@@ -1,26 +1,20 @@
 "use strict";
-/*004searchElements.html/.js:Aquí está el documento con la tabla y el formulario.
-¿Cómo encontrar?...*/
+/*005countDesdendant.html/.js: Hay un árbol estructurado como ul/li anidado.
+Escribe el código que para cada <li> muestra:
+¿Cuál es el texto dentro de él (sin el subárbol)?
+El número de <li> anidados: todos los descendientes, incluidos los profundamente 
+anidados.*/
 
-//La tabla con id="age-table".
-let tabla = document.getElementById("age-table");
+let li = document.getElementsByTagName("li");
 
-//Tods los elementos label dentro de la tabla (debería haber 3)
-let label = document.querySelectorAll("table label"); //Con All, todas las label que encuentre en tabla
+for (let item of li) {
+  //Texto dentro de cada li:
+  let textoLi = item.firstChild.textContent;
+  //Para evitar el subárbol, eliminamos espacios con trim()
+  console.log("Texto: " + textoLi.trim());
 
-//El primer td en la tabla (con la palabra “Age”).
-let tdAge = document.querySelector("table td"); //Si no ponemos ALL nos da el primero que encuentre
-
-//El form con name="search".
-let formSearch = document.querySelector("form[name = 'search'");
-
-// El primer input en ese formulario.
-let primerInput = formSearch.querySelector("input"); //Buscamos dentro del elemento que hemos creado
-primerInput.style.backgroundColor = "blue"; 
-
-// El último input en ese formulario.
-let ultimoInput = document.querySelector("form > input:last-child"); //tenemos que añadir > para indicar que es hijo directo (sino coge el anterior)
-ultimoInput.style.backgroundColor = "red"; 
-
-// Abra la página index.html en una ventana separada y haga uso de las herramientas del navegador.
-
+  //Número de descendientes: accedemos a las li dentro del que recorremos:
+  console.log(
+    "Tiene " + item.getElementsByTagName("li").length + " descendientes"
+  );
+}

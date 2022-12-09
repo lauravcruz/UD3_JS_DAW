@@ -13,24 +13,49 @@ calendario:
 let daysWeek = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
 
 function createCalendar(elem, year, month) {
+  //Averiguamos cuántos días tiene el mes
+  let totalDays = new Date(year, month, 0).getDate();
+  //Y en qué cae el primer día del mes
+  let firstDay = new Date(year, month - 1, 1).getDay();
+
+  //Creamos la tabla y la primera fila (de los encabezados)
   let table = document.createElement("table");
+  let week = document.createElement("tr");
 
   for (let i = 0; i < daysWeek.length; i++) {
-    let week = document.createElement("tr");
-    if (i == 0) {
-      for (let j = 0; j < daysWeek.length; j++) {
-        let th = document.createElement("th");
-        th.innerText = daysWeek[j];
-        week.append(th);
-      }
-    }else{
-      
-    }
-    table.append(week);
+    //La rellenamos automáticamente recorriendo el array de días de la semana
+    let th = document.createElement("th");
+    th.innerText = daysWeek[i];
+    week.append(th);
   }
-  let day = document.createElement("td");
+  table.append(week);
+
+  //Días será nuestro contador (del 1 al último día del mes)
+  let days = 0;
+  //Haremos un for hasta que lleguemos al total de días. Insertará una tr (semana)
+  for (let i = 0; days < totalDays; i++) {
+    let tr = document.createElement("tr");
+    //Automatizamos la inserción de columnas (7 días):
+    for (let j = 0; j < 7; j++) {
+      let td = document.createElement("td");
+      //Imprimiremos espacios en blanco en la primera semana (hasta que no sea el día de la semana en el que empieza el mes)
+      if (i == 0 && j < firstDay - 1) {
+        td.innerText = "";
+      } else if (days >= totalDays) {
+        //Si ha llegado el fin del mes, nos salimos del bucle
+        break;
+      } else {
+        td.innerText = ++days;
+      }
+      //Añadimos la columna al tr
+      tr.append(td);
+    }
+    //Añadimos la semana a la tabla
+    table.append(tr);
+  }
+
   elem.append(table);
 }
 
 let cal = document.getElementById("elem");
-createCalendar(cal, 2012, 9);
+createCalendar(cal, 2012, 2);

@@ -58,4 +58,4 @@ function createCalendar(elem, year, month) {
 }
 
 let cal = document.getElementById("elem");
-createCalendar(cal, 2012, 2);
+createCalendar(cal, 2012, 9);

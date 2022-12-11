@@ -1,0 +1,20 @@
+div{
+  background-color: rgb(192, 247, 187);
+  border: 1px solid green; 
+  margin: 1.5rem; 
+  padding: 1rem; 
+  position: relative; 
+}
+
+button{
+  all: unset; 
+  color: red; 
+  cursor: pointer; 
+  position: absolute;
+  top: 5%; 
+  left: 95%; 
+}
+
+.hidden {
+  display: none;
+}

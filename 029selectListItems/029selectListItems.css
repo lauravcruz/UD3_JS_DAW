@@ -1,3 +1,4 @@
 .selected{
     background: greenyellow;
+    cursor: pointer; 
 }

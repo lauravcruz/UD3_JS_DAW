@@ -7,3 +7,38 @@ cambia para ese solo elemento, los otros elementos no se modifican.
 PD: Para esta tarea, podemos suponer que los elementos de la lista son solo de texto. 
 No hay etiquetas anidadas.  Evita la selección nativa del navegador del texto en los 
 clics.*/
+
+let ul = document.getElementById("ul");
+
+//TODO: arreglar duplicado
+
+
+ul.addEventListener("mousedown", function () {
+  //evitamos la selección nativa del navegador
+  return false;
+});
+
+let bool;
+ul.addEventListener("click", function (event) {
+  if (event.ctrlKey || event.metaKey) {
+    ctrlSelect(event.target);
+  } else {
+    let selected = document.getElementsByClassName("selected");
+    for (let item of selected) {
+      item.classList.remove("selected");
+    }
+    select(event.target);
+  }
+});
+
+function select(li) {
+  li.classList.add("selected");
+}
+
+function ctrlSelect(li) {
+  if (li.classList.contains("selected")) {
+    li.classList.remove("selected");
+  } else {
+    li.classList.add("selected");
+  }
+}

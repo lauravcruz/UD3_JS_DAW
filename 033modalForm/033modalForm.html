@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="033modalForm.css" rel="stylesheet" type="text/css" />
+    <script defer src="033modalForm.js"></script>
+    <title>033 modalForm</title>
+  </head>
+  <body>
+    <button onclick="createModal()">
+      Click aquí para mostrar el formulario
+    </button>
+
+    <div id="overlay" hidden>
+      <div>
+        <div id="html"></div>
+        <form id = "form" onsubmit="send()">
+          <input id="text" name="text" />
+          <button type="submit">OK</button>
+          <button>Cancelar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

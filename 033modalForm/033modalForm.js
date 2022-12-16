@@ -22,20 +22,24 @@ function showPrompt(html, callback) {
   overlay.classList.add("overlayBackground");
   overlay.firstElementChild.classList.add("modal");
 
+  //Insertamos el html que nos viene en la función:
   let title = document.getElementById("html");
   title.innerHTML = html;
 
   form.firstElementChild.focus(); //Hacemos foco en el primer input
 
+  //Si envía:
   form.onsubmit = function () {
     let form = document.getElementById("form");
     let value = form.text.value;
     if (value == "") {
       return false;
     }
-
     hide(value);
   };
+
+  //Si pulsa cancelar:
+  document.getElementById("cancel").onclick = () => hide(null);
 
   document.addEventListener("keydown", function (event) {
     if (event.key == "Escape") {
@@ -43,10 +47,30 @@ function showPrompt(html, callback) {
     }
   });
 
+  //Para el tab:
   document.addEventListener("keydown", function (event) {
-    //TODO: faltan los focus del TAB+SHIFT
+    if (event.key == "Tab") {
+      let firstInput = form.elements[0];
+      let lastInput = form.elements[form.elements.length - 1];
+
+      if (event.shiftKey) {
+        //Con active element sabemos que elemento está en foco
+        //Si además pulsa shift, salta del primero al último
+        if (document.activeElement === firstInput) {
+          lastInput.focus();
+          event.preventDefault();
+        }
+      } else {
+        if (document.activeElement == lastInput) {
+          //Del último pasa al primero:
+          firstInput.focus();
+          event.preventDefault();
+        }
+      }
+    }
   });
 
+  //Esta función llama a callback y cierra la ventana. Se usa para cancelar y escape
   function hide(value) {
     overlay.setAttribute("hidden", true);
     overlay.classList.remove("overlayBackground");

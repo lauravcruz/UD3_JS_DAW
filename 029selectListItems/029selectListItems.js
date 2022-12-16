@@ -18,7 +18,7 @@ ul.addEventListener("mousedown", function () {
   return false;
 });
 
-let bool;
+
 ul.addEventListener("click", function (event) {
   if (event.ctrlKey || event.metaKey) {
     ctrlSelect(event.target);

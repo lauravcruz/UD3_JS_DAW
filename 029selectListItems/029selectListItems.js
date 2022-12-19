@@ -12,33 +12,25 @@ let ul = document.getElementById("ul");
 
 //TODO: arreglar duplicado
 
-
-ul.addEventListener("mousedown", function () {
+ul.onmousedown = function () {
   //evitamos la selección nativa del navegador
   return false;
-});
-
+};
 
 ul.addEventListener("click", function (event) {
   if (event.ctrlKey || event.metaKey) {
-    ctrlSelect(event.target);
+    event.target.classList.toggle("selected");
   } else {
-    let selected = document.getElementsByClassName("selected");
-    for (let item of selected) {
-      item.classList.remove("selected");
-    }
     select(event.target);
   }
 });
 
 function select(li) {
-  li.classList.add("selected");
-}
+  let selected = ul.querySelectorAll(".selected");
+  console.log(selected);
 
-function ctrlSelect(li) {
-  if (li.classList.contains("selected")) {
-    li.classList.remove("selected");
-  } else {
-    li.classList.add("selected");
+  for (let item of selected) {
+    item.classList.remove("selected");
   }
+  li.classList.add("selected");
 }

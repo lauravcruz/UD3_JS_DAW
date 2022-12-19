@@ -8,7 +8,6 @@ let elem = document.getElementById("elem");
 alert(elem.lastChild.nextSibling); 
 //Sí, es nulo. No es posible coger el siguiente hermano del último. No hay nada
 
-
 alert(elem.children[0].previousSibling); 
 /*Aquí sí muestra información porque detecta el hermano anterior
 como el div padre, pero está mal. Es un error de javascript*/

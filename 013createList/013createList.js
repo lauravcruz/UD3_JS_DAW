@@ -8,13 +8,18 @@ vacío).
 Todos los elementos deben ser creados dinámicamente.
 Si el usuario ingresa etiquetas HTML, deben ser tratadas como texto.*/
 
-let item; 
 let ul = document.createElement("ul");
-document.body.append(ul);
+let item;
 
 do {
   item = prompt("Inserta un elemento en la lista");
+  //Si pulsa escape, salimos:
+  if (item == null) {
+    break;
+  }
   let li = document.createElement("li");
   li.innerText = item;
   ul.append(li);
 } while (item ?? null);
+
+document.body.append(ul);

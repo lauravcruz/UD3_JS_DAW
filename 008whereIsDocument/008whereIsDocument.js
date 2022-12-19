@@ -1,7 +1,7 @@
 "use strict";
 
 ///Dónde está el "document" en la jerarquía?
-/*Es la raíz. Desde el punto de vista del BOM, proporciona información sobre la págna HTML.*/
+/*Es la raíz. Desde el punto de vista del BOM, proporciona información sobre la página HTML.*/
 
 //A qué clase pertenece el document?
 /*A la clase Document. Es el documento como un "todo".*/

@@ -10,5 +10,5 @@ let link = document.querySelectorAll("a");
 
 //Los recorremos y les ponemos el color purple.
 for (let i = 0; i < link.length; i++) {
-  link[i].style.color = "purple";
+  link[i].classList.add("purple");
 }

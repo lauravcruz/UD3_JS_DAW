@@ -1,7 +1,6 @@
 "use strict";
-/*010inserts.html/.js: createTextNode vs innerHTML vs textContent: Tenemos un 
-elemento DOM vacio elem y un string text. ¿Cuáles de estos 3 comandos harán 
-exactamente lo mismo? Pon un ejemplo.
+/*010inserts.html/.js: createTextNode vs innerHTML vs textContent: Tenemos un elemento DOM vacío elem y un string text. 
+¿Cuáles de estos 3 comandos harán exactamente lo mismo? Pon un ejemplo.
 */
 
 let text = "string";

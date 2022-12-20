@@ -13,8 +13,8 @@ let item;
 
 do {
   item = prompt("Inserta un elemento en la lista");
-  //Si pulsa escape, salimos:
-  if (item == null) {
+  //Si pulsa escape o introduce un espacio blanco salimos:
+  if (item == null || item == "") {
     break;
   }
   let li = document.createElement("li");

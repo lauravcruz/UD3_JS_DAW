@@ -10,6 +10,6 @@ let td = document.querySelectorAll("td");
 for (let i = 0; i < td.length; i++) {
   //Para que salga en diagonal cogemos las td múltiples de 6
   if (i % 6 == 0) {
-    td[i].style.backgroundColor = "red";
+    td[i].classList.add("red");
   }
 }

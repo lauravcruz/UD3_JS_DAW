@@ -3,5 +3,5 @@
 
 //Mediante "this" podemos acceder al elemento que llama a la función
 function hide(button) {
-  button.classList.add("hidden");
+  button.setAttribute("hidden", true);
 }

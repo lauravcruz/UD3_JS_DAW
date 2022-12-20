@@ -10,7 +10,7 @@ for (let div of messages) {
   button.textContent = "[X]";
   //Añadimos un event listener a cada botón. La función esconderá el div actual
   button.addEventListener("click", function () {
-    div.classList.add("hidden");
+    div.setAttribute("hidden", true);
   });
-  div.append(button);  
+  div.append(button);
 }

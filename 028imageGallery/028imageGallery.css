@@ -37,5 +37,6 @@ img{
 
 .flex img:hover{
     opacity: 100%;
+    cursor: pointer;
 }
 

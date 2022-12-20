@@ -5,5 +5,6 @@ id="text"> desaparezca al hacerle click.
 
 function hide() {
   let text = document.getElementById("text");
-  text.classList.add("hidden");
+  //Añadimos la propiedad hidden:
+  text.setAttribute("hidden", true);
 }

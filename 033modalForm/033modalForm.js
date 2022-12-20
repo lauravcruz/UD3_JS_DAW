@@ -61,7 +61,7 @@ function showPrompt(html, callback) {
           event.preventDefault();
         }
       } else {
-        if (document.activeElement == lastInput) {
+        if (document.activeElement === lastInput) {
           //Del último pasa al primero:
           firstInput.focus();
           event.preventDefault();

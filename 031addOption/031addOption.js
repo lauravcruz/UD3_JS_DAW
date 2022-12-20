@@ -11,7 +11,7 @@ Seleccionarlo.
 Nota, si has hecho todo bien, tu alert debería mostrar blues.*/
 
 let genres = document.getElementById("genres");
-//Con selectedIndex detectamos el index de la opción seleccionada: 
+//Con selectedIndex detectamos el index de la opción seleccionada:
 let selected = genres.options[genres.selectedIndex];
 alert("Value: " + selected.value + " Text: " + selected.text);
 
@@ -22,7 +22,7 @@ classic.text = "Classic";
 
 //Lo añadimos al select
 genres.appendChild(classic);
-//Lo seleccionamos y comprobamos: 
-classic.selected = true; 
+//Lo seleccionamos y comprobamos:
+classic.selected = true;
 let selected2 = genres.options[genres.selectedIndex];
 alert("Value: " + selected2.value + " Text: " + selected2.text);

@@ -4,10 +4,18 @@
 muestran?*/
 
 let button = document.getElementsByTagName("button");
-
+/*
 button[0].addEventListener("click", () => alert("1"));
 button[0].removeEventListener("click", () => alert("1"));
 button[0].onclick = () => alert(2);
-
+*/
 /*Se ejecuta "1" y "2". No se elimina el event listener porque no se está referenciando al anterior realmente.
-Habría que meter el alert() en una función y añadirla y eliminarla con los event listeners*/
+Habría que meter el alert() en una función y añadirla y eliminarla con los event listeners de la siguiente manera: */
+
+button[0].addEventListener("click", showAlert);
+button[0].removeEventListener("click", showAlert);
+button[0].onclick = () => alert(2);
+
+function showAlert() {
+  alert("1");
+}

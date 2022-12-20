@@ -6,7 +6,7 @@ desaparecer automáticamente después de 1.5 segundos. Las opciones son:
 */
 
 function showNotification({ top, right, html, className }) {
-
+  //Añadimos las opciones:
   let div = document.createElement("div");
   div.classList.add(className);
   div.classList.add("notification");
@@ -14,9 +14,12 @@ function showNotification({ top, right, html, className }) {
   div.style.top = top;
   div.style.right = right;
   document.body.append(div);
-}
 
-//TODO: FALTA INTERVAL
+  //Al segundo y medio, la borramos:
+  setInterval(function () {
+    div.remove();
+  }, 1500);
+}
 
 showNotification({
   top: 10, // 10px desde la parte superior de la ventana (por defecto es 0px)

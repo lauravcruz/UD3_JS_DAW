@@ -10,8 +10,6 @@ clics.*/
 
 let ul = document.getElementById("ul");
 
-//TODO: arreglar duplicado
-
 ul.onmousedown = function () {
   //evitamos la selección nativa del navegador
   return false;

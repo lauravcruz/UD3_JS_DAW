@@ -1,0 +1,16 @@
+table{
+  border: 1px solid black; 
+  font-size: 2rem;
+}
+
+table td, th{
+  border: 2px solid black; 
+}
+
+tbody tr:nth-child(odd){
+  background-color: rgb(228, 228, 221);
+}
+
+tbody tr:nth-child(even){
+  background-color: white;
+}

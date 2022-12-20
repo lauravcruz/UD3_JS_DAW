@@ -10,6 +10,7 @@ P.S. El árbol no debe tener elementos “extras” como <ul></ul> vacíos para 
 */
 
 let container = document.getElementById("container");
+let container2 = document.getElementById("container2");
 let data = {
   Fish: {
     trout: {},

@@ -1,6 +1,6 @@
 #container {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 800px 1fr;
   gap: 2rem;
   justify-content: center;
 }
@@ -29,19 +29,6 @@ button{
     font-size: 3rem;
 }
 
-.access{
-    display: flex;
-    justify-content: center;
-    grid-column: 2/3;
-    gap: 2rem; 
-    
-}
-.access i{
-    color: rgb(180, 177, 177);
-}
-.access i:hover{
-    color: black;
-}
 
 
 
